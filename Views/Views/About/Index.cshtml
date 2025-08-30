@@ -1,0 +1,50 @@
+@model List<About>
+@{
+    ViewData["Title"] = "Hakkımda";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+    int count = 0;
+}
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Resim Url</th>
+            <th>Başlık</th>
+            <th>Açıklama</th>
+            <th>Doğum Tarihi</th>
+            <th>Website</th>
+            <th>Telefon Numarası</th>
+            <th>Şehir</th>
+            <th>Mezuniyet</th>
+            <th>Email</th>
+            <th class="text-center" style="width:120px">İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.ImageUrl</td>
+                <td>@item.Title</td>
+                <td>@item.Descripion</td>
+                <td>@item.BirthDate</td>
+                <td>@item.Website</td>
+                <td>@item.PhoneNumber</td>
+                <td>@item.City</td>
+                <td>@item.Graduation</td>
+                <td>@item.Email</td>
+                <td class="d-flex justify-content-center gap-2">
+                    <a href="/About/DeleteAbout/@item.AboutId" class="btn btn-outline-danger">Sil</a>
+                    <a href="/About/UpdateAbout/@item.AboutId" class="btn btn-outline-info">Güncelle</a>
+                </td>
+            </tr>
+        }
+       
+
+    </tbody>
+</table>
+<a href="/About/CreateAbout" class="btn btn-outline-primary">Yeni Hakkımda Oluştur</a>
+

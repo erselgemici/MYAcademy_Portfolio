@@ -1,0 +1,37 @@
+@model List<Banner>
+@{
+    ViewData["Title"] = "Öne Çıkan Alan";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+    int count = 0;
+}
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Fotoğraf</th>
+            <th>Ad Soyad</th>
+            <th>Başlık</th>
+            <th class="text-center" style="width:120px">İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.CoverImageUrl</td>
+                <td>@item.NameSurname</td>
+                <td>@item.Title</td>
+                <td class="d-flex justify-content-center gap-2">
+                    <a href="/Banner/DeleteBanner/@item.BannerId" class="btn btn-outline-danger">Sil</a>
+                    <a href="/Banner/UpdateBanner/@item.BannerId" class="btn btn-outline-info">Güncelle</a>
+                </td>
+            </tr>
+        }
+           
+        
+    </tbody>
+</table>
+<a href="/Banner/CreateBanner" class="btn btn-outline-primary">Yeni Alan Oluştur</a>

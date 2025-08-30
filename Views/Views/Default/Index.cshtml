@@ -1,0 +1,45 @@
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+<!-- Header Section -->
+@await Component.InvokeAsync("_DefaultHeaderComponent")
+<!-- /Header Section -->
+
+<!-- Hero Section -->
+@await Component.InvokeAsync("_DefaultBannerComponent")
+<!-- /Hero Section -->
+
+<!-- About Section -->
+@await Component.InvokeAsync("_DefaultAboutComponent")
+<!-- /About Section -->
+
+<!-- Resume Section -->
+@await Component.InvokeAsync("_DefaultResumeComponent")
+<!-- /Resume Section -->
+
+<!-- Skills Section -->
+@await Component.InvokeAsync("_DefaultSkillsComponent")
+<!-- /Skills Section -->
+
+<!-- Stats Section -->
+@await Component.InvokeAsync("_DefaultStatisticComponent")
+<!-- /Stats Section -->
+
+<!-- Testimonials Section -->
+@await Component.InvokeAsync("_DefaultTestimonialComponent")
+<!-- /Testimonials Section -->
+
+<!-- Project Section -->
+@await Component.InvokeAsync("_DefaultProjectsComponent")
+<!-- /Project Section -->
+
+<!-- Contact Section -->
+@await Component.InvokeAsync("_DefaultContactComponent")
+<!-- /Contact Section -->
+
+<!-- Footer Section -->
+@await Component.InvokeAsync("_DefaultFooterComponent")
+<!-- /Footer Section -->
+

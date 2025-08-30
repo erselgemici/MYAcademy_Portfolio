@@ -1,0 +1,49 @@
+@model List<SocialMedia>
+@*
+    Default Footer
+*@
+<footer id="footer" class="footer light-background">
+
+    <div class="container">
+        <div class="copyright text-center ">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename"></strong> <span>Tüm Hakları Saklıdır<br></span></p>
+        </div>
+        <div class="social-links d-flex justify-content-center">
+             @foreach (var sm in Model)
+            {
+                if (sm.SocialMediaName == "Twitter")
+                {
+                    <a href="@sm.SocialMediaLink" class="twitter" target="_blank">
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+                }
+                else if (sm.SocialMediaName == "Facebook")
+                {
+                    <a href="@sm.SocialMediaLink" class="facebook" target="_blank">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                }
+                else if (sm.SocialMediaName == "Instagram")
+                {
+                    <a href="@sm.SocialMediaLink" class="instagram" target="_blank">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                }
+                else if (sm.SocialMediaName == "Linkedin")
+                {
+                    <a href="@sm.SocialMediaLink" class="linkedin" target="_blank">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                }
+            }
+        </div>
+        <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you've purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+            Designed by <a href="/Default/Index">Ersel Gemici</a> Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+        </div>
+    </div>
+
+</footer>

@@ -1,0 +1,109 @@
+@model List<UserMessage>
+@{
+    ViewData["Title"] = "Mesajlar";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+    int count = 0;
+}
+<div class="mb-3">
+    <a href="/Message/Index" class="btn btn-secondary btn-sm">Tümü</a>
+    <a href="/Message/ReadMessages" class="btn btn-success btn-sm">Okunan Mesajlar</a>
+    <a href="/Message/UnreadMessages" class="btn btn-warning btn-sm">Okunmamış Mesajlar</a>  
+</div>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Gönderen</th>
+            <th>Email</th>
+            <th>Mesaj</th>
+            <th>Konu</th>
+            <th>Durum</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr class="@(item.IsRead ? "" : "fw-bold")">
+                <td>@count</td>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.MessageBody</td>
+                <td>@item.Subject</td>
+                <td>
+                    @if (item.IsRead)
+                    {
+                        <span class="badge bg-success">Okundu</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-warning text-dark">Okunmadı</span>
+                    }
+                </td>
+                <td class="d-flex gap-1 align-items-center">
+
+                    <button type="button"
+                            onclick="openMessage('/Message/ReadMessage/@item.UserMessageId')"
+                            class="btn btn-info btn-sm">
+                        Mesajı Aç
+                    </button>
+                    @if (item.IsRead)
+                    {
+                        <a href="/Message/MarkAsUnread/@item.UserMessageId" class="btn btn-sm btn-warning">Okunmadı</a>
+                    }
+                    else
+                    {
+                        <a href="/Message/MarkAsRead/@item.UserMessageId" class="btn btn-sm btn-success">Okundu</a>
+                    }
+                    <button type="button"
+                            class="btn btn-outline-danger btn-sm"
+                            onclick="deleteMessage(@item.UserMessageId)">
+                        Sil
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<!-- Modal -->
+<div class="modal fade" id="messageModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body" id="modalContent">
+                <!-- Mesaj detayı buraya yüklenecek -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openMessage(url) {
+        $("#modalContent").load(url, function () {
+            $("#messageModal").modal("show");
+        });
+        // Modal kapatıldığında tabloyu yenile
+        $('#messageModal').on('hidden.bs.modal', function () {
+            location.reload();
+        });
+    }
+</script>
+
+<script>
+    function deleteMessage(id) {
+        Swal.fire({
+            title: 'Emin misiniz?',
+            text: "Bu mesaj kalıcı olarak silinecek!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: 'Evet, sil!',
+            cancelButtonText: 'Vazgeç'
+        }).then((result) => {
+            if (result.isConfirmed) {               
+                window.location.href = '/Message/DeleteMessage/' + id;
+            }
+        });
+    }
+</script>

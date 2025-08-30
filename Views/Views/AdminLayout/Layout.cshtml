@@ -1,0 +1,51 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- [Head] start -->
+@await Component.InvokeAsync("_AdminLayoutHeadComponent")
+
+<!-- [Head] end -->
+<!-- [Body] Start -->
+
+<body data-pc-preset="preset-1" data-pc-direction="ltr" data-pc-theme="light">
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+    <!-- [ Pre-loader ] End -->
+    <!-- [ Sidebar Menu ] start -->
+    @await Component.InvokeAsync("_AdminLayoutSidebarComponent")
+
+    <!-- [ Sidebar Menu ] end -->
+    <!-- [ Header Topbar ] start -->
+    @await Component.InvokeAsync("_AdminLayoutTopbarComponent")
+    
+    <!-- [ Header ] end -->
+    <!-- [ Main Content ] start -->
+    <div class="pc-container">
+        <div class="pc-content">
+            <!-- [ breadcrumb ] start -->
+            @await Component.InvokeAsync("_AdminLayoutContentComponent")          
+            <!-- [ breadcrumb ] end -->
+            <!-- [ Main Content ] start -->
+            @RenderBody()
+
+        </div>
+    </div> <!-- RenderBody() olduğu için ayrı bir componente almıyoruz -->
+    <!-- [ Main Content ] end -->
+    @await Component.InvokeAsync("_AdminLayoutFooterComponent")
+    
+    @await Component.InvokeAsync("_AdminLayoutScriptComponent")
+   
+
+
+
+</body>
+<!-- [Body] end -->
+
+</html>

@@ -1,0 +1,17 @@
+@model List<Education>
+@*
+    Default Education
+*@
+@foreach (var item in Model)
+{
+    <div class="resume-item">
+        <h4>@item.Department</h4>
+        <h5>@item.StartYear - @item.EndYear</h5>
+        <p><em>@item.SchoolName</em></p>
+        <p>@item.Description</p>
+    </div>
+
+    <!-- Edn Resume Item -->
+}
+
+

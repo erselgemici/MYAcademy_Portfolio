@@ -1,0 +1,43 @@
+@model About
+@*
+    Default Resume
+*@
+<section id="resume" class="resume section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Özgeçmiş</h2>
+        <p>Geçmiş deneyim ve eğitim hayatıma buradan göz atabilirsiniz.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+        <div class="row">
+            
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="resume-title">Özet</h3>
+
+                <div class="resume-item pb-0">                  
+                    <h4>Ersel Gemici</h4>
+                    <p><em>@Model.Descripion.</em></p>
+                    <ul>
+                        <li>@Model.City</li>
+                        <li>@Model.PhoneNumber</li>
+                        <li>@Model.Email</li>
+                    </ul>
+                </div><!-- Edn Resume Item -->
+
+                <h3 class="resume-title">Eğitim</h3>
+                @await Component.InvokeAsync("_DefaultEducationComponent")
+               
+
+            </div>
+
+            @await Component.InvokeAsync("_DefaultExperienceComponent")
+            
+
+        </div>
+
+    </div>
+
+</section>

@@ -1,0 +1,19 @@
+@model Banner
+@*
+    Default Banner
+*@
+<section id="hero" class="hero section">
+
+    <img src="@Model.CoverImageUrl" alt="" data-aos="fade-in">
+
+    <div class="container text-center" data-aos="zoom-out" data-aos-delay="100">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2>@Model.NameSurname</h2>
+                <p>@Model.Title</p>
+                <a href="#about" class="btn-get-started">Hakkımda</a>
+            </div>
+        </div>
+    </div>
+
+</section>

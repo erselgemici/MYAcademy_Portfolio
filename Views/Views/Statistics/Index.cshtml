@@ -1,0 +1,128 @@
+
+@{
+    ViewData["Title"] = "İstatistikler";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="mb-2 f-w-400 text-muted">Proje Sayısı</h6>
+                <h4 class="mb-3">
+                    @ViewBag.projectCount
+                </h4>
+                
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="mb-2 f-w-400 text-muted">Yetenek Ortalaması</h6>
+                <h4 class="mb-3">
+                    @ViewBag.skillAverage 
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="mb-2 f-w-400 text-muted">Okunmamış Mesaj Sayısı</h6>
+                <h4 class="mb-3">
+                    @ViewBag.unreadMessageCount 
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="mb-2 f-w-400 text-muted">Son Mesaj Gönderen Kişi</h6>
+                <h4 class="mb-3">
+                    @ViewBag.lastMessageQwner 
+                </h4>                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-primary">
+            <div class="card-body">
+                <h3 class="text-white m-0">@ViewBag.experienceYear</h3>
+                <span class="m-t-10">Deneyim Yılı</span>
+                <i class="fas fa-briefcase"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-info">
+            <div class="card-body">
+                <h3 class="text-white m-0">@ViewBag.companyCount</h3>
+                <span class="m-t-10">Çalıştığım Şirket Sayısı</span>
+                <i class="fa fa-building"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-dark">
+            <div class="card-body">
+                <h3 class="text-white m-0">@ViewBag.reviewAverage</h3>
+                <span class="m-t-10">Değerlendirme Ortalama</span>
+                <i class="fa fa-star"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-danger">
+            <div class="card-body">
+                <h3 class="text-white m-0">@ViewBag.maxReviewOwner</h3>
+                <span class="m-t-10">En Yüksek Değerlendiren</span>
+                <i class="fa fa-user"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-3">
+        <div class="card bg-success text-white widget-visitor-card">
+            <div class="card-body text-center">
+                <h2 class="text-white">@ViewBag.topSkill</h2>
+                <p class="text-white mb-0">En Güçlü Beceri</p>
+                <i class="ti ti-star d-block f-46 text-white"></i>
+            </div>
+        </div>
+    </div>   
+    <div class="col-sm-3">
+        <div class="card bg-primary text-white widget-visitor-card">
+            <div class="card-body text-center">
+                <h2 class="text-white">@ViewBag.latestProject</h2>
+                <p class="text-white mb-0">Son Eklenen Proje</p>
+                <i class="ti ti-code d-block f-46 text-white"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-danger text-white widget-visitor-card">
+            <div class="card-body text-center">
+                <h2 class="text-white">@ViewBag.categoryCount</h2>
+                <p class="text-white mb-0">Toplam Kategori Sayısı</p>
+                <i class="ti ti-calendar-stats d-block f-46 text-white"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-warning text-white widget-visitor-card">
+            <div class="card-body text-center">
+                <h2 class="text-white">@ViewBag.referenceCount</h2>
+                <p class="text-white mb-0">Referans Sayısı</p>
+                <i class="ti ti-user d-block f-46 text-white"></i>
+            </div>
+        </div>
+    </div>
+</div>
+

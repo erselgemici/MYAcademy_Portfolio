@@ -1,0 +1,43 @@
+@model List<Skill>
+@{
+    ViewData["Title"] = "Teknik Beceriler";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+    int count = 0;
+}
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Beceri Adı</th>
+        <th style ="width:150px">Seviye</th>
+        <th class="text-center" style="width:140px">İşlemler</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Title</td>
+            <td>
+                <div class="progress" style="height: 22px;">
+                    <div class="progress-bar bg-success fw-semibold"
+                         role="progressbar"
+                         style="width:@item.Percentage%"
+                         aria-valuenow="@item.Percentage"
+                         aria-valuemin="0"
+                         aria-valuemax="100">
+                        @item.Percentage%
+                    </div>
+                </div>
+            </td>
+            <td class="d-flex justify-content-center gap-2">
+                <a href="/Skill/DeleteSkill/@item.SkillId" class="btn btn-outline-danger">Sil</a>
+                <a href="/Skill/UpdateSkill/@item.SkillId" class="btn btn-outline-info">Güncelle</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<a href="/Skill/CreateSkill" class="btn btn-outline-primary">Yeni Beceri Oluştur</a>
+
