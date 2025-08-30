@@ -36,9 +36,3 @@ Amaç; yazılım geliştirme deneyimlerimi sergilemek, projelerimi ve yetenekler
 - **Database:** Microsoft SQL Server  
 - **Frontend:** HTML5, CSS3, Bootstrap, AdminLTE / Mantis Theme  
 - **UI/UX:** jQuery, SweetAlert, Modal Popup  
-
----
-
-## 📷 Ekran Görüntüleri
-
-
