@@ -36,3 +36,7 @@ Amaç; yazılım geliştirme deneyimlerimi sergilemek, projelerimi ve yetenekler
 - **Database:** Microsoft SQL Server  
 - **Frontend:** HTML5, CSS3, Bootstrap, AdminLTE / Mantis Theme  
 - **UI/UX:** jQuery, SweetAlert, Modal Popup  
+<img width="955" height="439" alt="SS0" src="https://github.com/user-attachments/assets/fe545653-74ed-421d-8e10-be06c3ab5939" />
+<img width="425" height="389" alt="SS1" src="https://github.com/user-attachments/assets/0cdcedbb-8ddd-486a-9ab4-6117fc91892e" />
+<img width="956" height="404" alt="SS2" src="https://github.com/user-attachments/assets/d57bdbf4-060c-45c4-8235-537704266c89" />
+<img width="953" height="320" alt="SS3" src="https://github.com/user-attachments/assets/c9627a87-046f-42d3-9c82-c82a4c052624" />
